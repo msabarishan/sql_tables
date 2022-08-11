@@ -250,3 +250,15 @@ create view depo_loan as
 FROM loan
 JOIN deposit
 ON loan.cus_id = deposit.cus_id);
+
+-- Cursor--
+begin;
+declare s1 cursor for select * from deposit;
+fetch first from s1;
+fetch last from s1;
+fetch prior from s1;
+fetch next	 from s1;
+FETCH ABSOLUTE 7 FROM s1;
+FETCH RELATIVE -2 FROM s1;
+close s1;
+deallocate s1; -- This line does not work in postgres--
