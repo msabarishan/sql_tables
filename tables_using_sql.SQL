@@ -240,3 +240,13 @@ select *,max(salary) over() as max_salary from employee;
 select *,row_number() over(partition by branch_id order by emp_id) as rn from employee;
 
 --Rank 3 --Top 2 in branch--
+  
+  
+  ---VIEW-
+  
+drop view if exists depo_loan;
+create view depo_loan as
+(SELECT loan.cus_id ,loan.loan_amount ,loan.branch_id,deposit.deposit_amount 
+FROM loan
+JOIN deposit
+ON loan.cus_id = deposit.cus_id);
