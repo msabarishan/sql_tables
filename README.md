@@ -7,4 +7,10 @@ Types of Keys:
 
 Types of Normal Forms:
 1. First Normal Form: A table is said to be at 1NF if records in any cell contains single value (or atomic value).
-2. Second Normal Form: 1. Table should satisfy 1NF. They should not be any partial dependency
+2. Second Normal Form: 1. Table should satisfy 1NF. There should not be any partial dependency.
+   Partial Dependency: If a proper subset of any candidate key determines the non-prime attribute.
+3. Third Normal Form: 1. Table should be 2NF. There should not be any transitive dependency.
+   Transitive Dependency: If any field is dependent on any other field which is non prime.
+4. Boyce Codd Normal Form (BCNF): 1. Table should be in 3NF. All the functional dependency of an attribute should be a super key.
+5. ![image](https://user-images.githubusercontent.com/103972490/193458710-9c326744-cfc8-47d4-845d-1c7cd5c65822.png)
+ 
