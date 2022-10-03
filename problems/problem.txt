@@ -1,1 +1,5 @@
+-- Select highest, nth highest value
 
+SELECT * FROM employee 
+WHERE salary= (SELECT DISTINCT(salary) 
+FROM employee ORDER BY salary DESC LIMIT n-1,1);
