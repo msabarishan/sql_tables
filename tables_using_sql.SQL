@@ -262,3 +262,7 @@ FETCH ABSOLUTE 7 FROM s1;
 FETCH RELATIVE -2 FROM s1;
 close s1;
 deallocate s1; -- This line does not work in postgres--
+  
+-- To display all the table data in db
+  
+select * from information_schema.tables where table_schema='public';
