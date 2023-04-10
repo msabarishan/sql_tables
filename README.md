@@ -1,9 +1,10 @@
 # sql_tables Basics:
 Types of Keys:
-1. Primary Key: It helps to uniquely identify records in a table. It can be a single or multiple field. It cannot take null values. We can call it is as minimal candidate key.
+1. Primary Key:It is a candidate key that is chosen by the database designer to identify entities with in an entity set. OR A key which is used to uniquely identify each record is known as primary key.
+From above Candidate keys any one can be the primary key. And the another one which is not chosen as primary key will be know as Alternate key
 2. Foreign key: It represents the relation with primary key of another table. A table can have more than one primary key.
-3. Super Key: It also helps to uniquely identify records in a table with other attributes which are redudant. It can contain one or more fields. We can say it as non-minimal candidate key.
-5. Candidate Key: It is a minimum super key required to uniquely identify a table. Each candidate key can also work as primary key.
+3. Super Key: Super Key stands for superset of a key. A Super Key is a set of one or more attributes that are taken collectively and can identify all other attributes uniquely.
+5. Candidate Key: Candidate keys are a Super Key which are not having any redundant attributes. In other words candidate keys are minimal Super Keys..
 
 Types of Normal Forms:
 1. First Normal Form: A table is said to be at 1NF if records in any cell contains single value (or atomic value).
