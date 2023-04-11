@@ -51,6 +51,13 @@ CREATE TABLE branch_supplier (
   PRIMARY KEY(branch_id, supplier_name),
   FOREIGN KEY(branch_id) REFERENCES branch(branch_id) ON DELETE CASCADE
 );
+-------------------------
+--altering column data types
+alter table table_name
+alter column column_name type varchar(10);
+
+alter table table_name
+alter column column_name type integer using column_name::int;
 
 
 -- -----------------------------------------------------------------------------
