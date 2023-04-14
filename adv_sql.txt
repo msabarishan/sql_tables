@@ -17,4 +17,8 @@ max(e.salary) over(partition by e.branch_id order by emp_id) as max_salary
 from employee e;
 
 -- row number, rank, dense rank, lead and lag
+-- Find the first two joinees in each branch
+select e.*,
+row_number() over(partition by e.branch_id order by emp_id desc) as rn
+from employee e;
 
