@@ -12,5 +12,9 @@ select e.*,
 max(e.salary) over(partition by e.branch_id) as max_salary
 from employee e;
 
+select e.*,
+max(e.salary) over(partition by e.branch_id order by emp_id) as max_salary
+from employee e;
+
 -- row number, rank, dense rank, lead and lag
 
