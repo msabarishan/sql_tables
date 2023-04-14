@@ -1,2 +1,16 @@
 -- Fetching the top n th salary from the table
 select * from employee where salary =(select distinct(salary) from employee order by salary des limit 1 offset 1);
+
+--Window Function
+-- Aggregare with over()
+select e.*,
+max(e.salary) over() as max_salary
+from employee e;
+
+-- aggregate with over(partition by)
+select e.*,
+max(e.salary) over(partition by e.branch_id) as max_salary
+from employee e;
+
+-- row number, rank, dense rank, lead and lag
+
