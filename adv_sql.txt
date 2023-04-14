@@ -1,1 +1,2 @@
-
+-- Fetching the top n th salary from the table
+select * from employee where salary =(select distinct(salary) from employee order by salary des limit 1 offset 1);
