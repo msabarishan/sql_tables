@@ -16,9 +16,32 @@ select e.*,
 max(e.salary) over(partition by e.branch_id order by emp_id) as max_salary
 from employee e;
 
--- row number, rank, dense rank, lead and lag
+-- row number, rank, dense rank, lead and lag, case and end
 -- Find the first two joinees in each branch
 select e.*,
 row_number() over(partition by e.branch_id order by emp_id desc) as rn
 from employee e;
 
+-- rank, dense rank
+select * from
+(select e.*,
+rank() over(partition by e.branch_id order by salary desc) as rnk,
+dense_rank() over(partition by e.branch_id order by salary desc) as den_rnk
+from employee e) x
+where rnk =2;
+
+--lead and lag 
+-- display the previous and next employee salary
+select e.*,
+lead(salary) over(partition by e.branch_id order by emp_id) as next_emp,
+lag(salary) over(partition by e.branch_id order by emp_id) as pre_emp
+from employee e;
+
+--case and end
+
+select e.*,
+lag(salary) over(partition by e.branch_id order by emp_id) as next_emp,
+case when e.salary <= lag(salary) over(partition by e.branch_id order by emp_id) then 'Lower and same'
+     when e.salary > lag(salary) over(partition by e.branch_id order by emp_id) then 'HIgher'
+     end sal_range
+from employee e;
