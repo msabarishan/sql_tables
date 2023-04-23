@@ -17,6 +17,11 @@ select * from pg_tables where schemaname = 'public';
  dob date
 );
 
+--alter table constraint
+alter table employee
+add primary key (emp_id);
+
+--insert values into table
 insert into employee values 
  (101,'AKASH','A01',600001,74233,'01-01-2015','06-02-1996'),
  (102,'AKIL','A01',600701,72211,'02-01-2018','07-02-1998'),
@@ -27,3 +32,52 @@ insert into employee values
  (107,'SANTHOSH','A03',636001,140000,'07-01-2020','12-02-1996'),
  (109,'KISHORE','A02',620001,42797,'09-01-2022','14-01-1992'),
  (110,'MEHA','A01',560001,69296,'10-01-2022','07-08-2000');
+ 
+--create zipcode table
+
+--insert values into zipcode table
+insert into zipcode  values
+(600001,'CHENNAI','TAMILNADU','INDIA'),
+(670001,'KANNUR','KERALA','INDIA'),
+(641001,'COIMBATORE','TAMILNADU','INDIA'),
+(400001,'MUMBAI','MAHARASTRA','INDIA'),
+(700001,'KOLKATA','WEST BENGAL','INDIA'),
+(643001,'NIGIRIS','TAMILNADU','INDIA'),
+(636001,'SALEM','TAMILNADU','INDIA'),
+(625001,'MADURAI','TAMILNADU','INDIA'),
+(620001,'TRICHY','TAMILNADU','INDIA'),
+(560001,'BENGALURU','KARNATAKA','INDIA');
+
+--alter employee table constraint
+alter table employee
+add constraint zipfk
+foreign key (zip_code)
+references
+zipcode(zip_code)
+on delete set null;
+
+--create table dept
+create table dept 
+(dept_id int primary key,
+dept_name varchar(25),
+dept_head int,
+foreign key (dept_head) references employee(emp_id) on delete set null
+ );
+ 
+ --insert values in  dept
+ insert into dept values 
+('A01','PROD',101),
+('A02','QUALITY',103),
+('A03','SALES',107);
+
+--alter datatype
+alter table dept
+alter column dept_id type varchar(3);
+
+--add foreign key
+alter table employee
+add constraint deptfk
+foreign key (dept_id)
+references dept(dept_id)
+on delete set null;
+
