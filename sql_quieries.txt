@@ -1,0 +1,29 @@
+--Welcome to FactsFirst Tamil Channel----
+--Link for SQL Playlist: https://www.youtube.com/playlist?list=PLxdwRVmj7rGJ55V_gaotuQXO6leLLAlTh
+--Link for Postgres Download tutorial : https://youtu.be/H3FE_R1wZd4
+
+--To Check the existing Tables in Postgres DB
+select * from pg_tables where schemaname = 'public';
+
+--Create Table
+--employee
+ create table employee (
+ emp_id int,
+ emp_name varchar(20),
+ dept_id varchar(3),
+ zip_code int,
+ salary money,
+ doj date,
+ dob date
+);
+
+insert into employee values 
+ (101,'AKASH','A01',600001,74233,'01-01-2015','06-02-1996'),
+ (102,'AKIL','A01',600701,72211,'02-01-2018','07-02-1998'),
+ (103,'PANDY','A02',641001,71074,'03-03-2018','08-02-1996'),
+ (104,'DINESH','A02',400001,69938,'04-01-2018','09-10-1996'),
+ (105,'RENU','A03',700001,50090,'05-01-2019','10-04-1998'),
+ (106,'RAVI','A03',643001,117148,'06-04-2019','11-12-1996'),
+ (107,'SANTHOSH','A03',636001,140000,'07-01-2020','12-02-1996'),
+ (109,'KISHORE','A02',620001,42797,'09-01-2022','14-01-1992'),
+ (110,'MEHA','A01',560001,69296,'10-01-2022','07-08-2000');
