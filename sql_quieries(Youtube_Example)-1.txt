@@ -2,9 +2,12 @@
 --Link for SQL Playlist: https://www.youtube.com/playlist?list=PLxdwRVmj7rGJ55V_gaotuQXO6leLLAlTh
 --Link for Postgres Download tutorial : https://youtu.be/H3FE_R1wZd4
 
+
+
 --To Check the existing Tables in Postgres DB
 select * from pg_tables where schemaname = 'public';
 
+-- Below are the codes under DDL Category
 --Create Table
 --employee
  create table employee (
