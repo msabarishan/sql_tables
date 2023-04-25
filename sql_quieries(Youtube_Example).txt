@@ -86,3 +86,7 @@ foreign key (dept_id)
 references dept(dept_id)
 on delete set null;
 
+--Rename columns
+alter table zipcode
+rename zipcode to zip_code
+
