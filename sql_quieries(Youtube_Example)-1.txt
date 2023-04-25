@@ -7,7 +7,7 @@
 --To Check the existing Tables in Postgres DB
 select * from pg_tables where schemaname = 'public';
 
--- Below are the codes under DDL Category
+-- Below are the codes under DDL & DML Category
 --Create Table
 --employee
  create table employee (
