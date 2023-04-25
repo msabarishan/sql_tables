@@ -34,6 +34,11 @@ insert into employee values
  (110,'MEHA','A01',560001,69296,'10-01-2022','07-08-2000');
  
 --create zipcode table
+create table zipcode 
+(zipcode int primary key,
+district varchar(25),
+state varchar(25),
+country varchar(25));
 
 --insert values into zipcode table
 insert into zipcode  values
